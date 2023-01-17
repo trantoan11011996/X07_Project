@@ -314,7 +314,7 @@ export default function UploadRecruiment() {
                 onClick={() => setPage((currentPage) => currentPage - 1)}
                 className={page == 0 ? "btn-prev-form btn-form-upload-job disabled" : "btn-prev-form btn-form-upload-job"}
               >
-                Quay lại
+                Quay lại di
               </button>
             )}
             {NxtButton && (
