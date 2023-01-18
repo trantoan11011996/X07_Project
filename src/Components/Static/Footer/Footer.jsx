@@ -120,7 +120,7 @@ export default function Footer() {
               </Row>
             </Col>
             <Col sm={6} md={3}>
-              <p className={cx("header-footer-content")}>Chứng nhận</p>
+              <p className={cx("header-footer-content")}>Chứng nhận học giỏi</p>
               <div className={cx("verify-footer")}>
                 <div className={cx("wrap-verify-icon")}>
                   <SiVerizon className={cx("verify-icon")}></SiVerizon>
