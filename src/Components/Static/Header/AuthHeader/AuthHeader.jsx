@@ -25,7 +25,8 @@ const AuthHeader = ({ mode }) => {
   const current = JSON.parse(localStorage.getItem("currentUser"));
   useEffect(() => {
     const closeUserBox = (e) => {
-      if (e.path[1].className !== "navbar-content account-user") {
+      const valueTarget = e.srcElement
+      if( !valueTarget.classList.contains("content")){
         setShowUserBox(false);
       }
     };
@@ -69,7 +70,7 @@ const AuthHeader = ({ mode }) => {
           onClick={() => toggleUserBox()}
         >
           <MdAccountCircle className="icon-navbar"></MdAccountCircle>
-          {!current ? <p className="content">Đăng ký</p> : <></>}
+          {!current ? <p className="content content-login">Đăng ký</p> : <></>}
           {(currentUser?.role === "recruiter" ||
             user?.role === "recruiter") && (
             <p className="content">Nhà tuyển dụng</p>
