@@ -61,7 +61,7 @@ export default function UserRecruiter() {
     const user = JSON.parse(localStorage.getItem("currentUser"));
     setUserInfo(user);
     if (user.avatar) {
-      const splitString = user.avatar.split("\\");
+      const splitString = user.avatar.split("/");
       const imageString = splitString[1] + "/".concat(splitString[2]);
       setImageData(imageString);
     }
@@ -113,8 +113,7 @@ export default function UserRecruiter() {
         return res.json();
       })
       .then((data) => {
-        console.log(data)
-        const splitString = data.split("\\");
+        const splitString = data.split("/");
         const stringCheck = splitString[2].split(".");
         checkFileType(stringCheck[1]);
         const imageString = splitString[1] + "/".concat(splitString[2]);
@@ -181,12 +180,12 @@ export default function UserRecruiter() {
       return;
     } else {
       setDescriptEmpty(false);
-      // if (!imageData) {
-      //   setImageEmpty(true);
-      //   return;
-      // } else {
-      //   setImageEmpty(false);
-      // }
+      if (!imageData) {
+        setImageEmpty(true);
+        return;
+      } else {
+        setImageEmpty(false);
+      }
       const update = await updateRecruiterInfo(
         companyName,
         companyEmail,

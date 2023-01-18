@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import { getApiHostImage } from "../../../../config";
 export default function JobItemHomePage({ job, id }) {
   const image = job?.name?.avatar;
-  const splitString = image.split("\\");
+  const splitString = image.split("/");
   const imageString = splitString[1] + "/".concat(splitString[2]);
 
   return (
