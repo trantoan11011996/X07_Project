@@ -22,7 +22,7 @@ export default function CandidateListItem({ data, handleValue }) {
         } else if (data.status == "pending") {
             setStatus("Đang chờ")
         };
-        const splitString = data.cv.split("\\");
+        const splitString = data.cv.split("/");
         const cvString = splitString[1] + "/".concat(splitString[2]);
         setDownloadLink(cvString);
 
@@ -33,7 +33,7 @@ export default function CandidateListItem({ data, handleValue }) {
         let newCreate = `${crDay}-${crMonth}-${crYear}`;
         setCreateDate(newCreate);
         if (data.userId.avatar) {
-            let imgSplit = data.userId.avatar.split("\\");
+            let imgSplit = data.userId.avatar.split("/");
             let imgString = imgSplit[1] + "/".concat(imgSplit[2]);
             setAvatar(imgString)
         }

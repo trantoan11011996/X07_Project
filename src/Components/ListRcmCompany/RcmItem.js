@@ -12,7 +12,7 @@ const cx = classNames.bind(styles);
 export default function RcmItem({ myJobRecruitment, id }) {
 
   const image = myJobRecruitment?.name?.avatar;
-  const splitString = image.split("\\");
+  const splitString = image.split("/");
   const imageString = splitString[1] + "/".concat(splitString[2]);
   let crTime = new Date(myJobRecruitment.createAt).getTime();
   let crDay = new Date(crTime).getDate();

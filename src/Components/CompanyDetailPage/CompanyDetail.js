@@ -39,7 +39,7 @@ export default function CompanyDetail() {
         if (data) {
             setCompanyData(data);
             const image = data?.avatar;
-            const splitString = image.split("\\");
+            const splitString = image.split("/");
             const imageString = splitString[1] + "/".concat(splitString[2]);
             setLogo(imageString);
             return

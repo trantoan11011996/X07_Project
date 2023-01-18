@@ -75,7 +75,7 @@ export default function UserCandidate() {
     setToken(getToken);
     const user = JSON.parse(localStorage.getItem("currentUser"));
     if (user.avatar) {
-      const splitString = user.avatar.split("\\");
+      const splitString = user.avatar.split("/");
       const imageString = splitString[1] + "/".concat(splitString[2]);
       setImageData(imageString);
     }
@@ -154,7 +154,7 @@ export default function UserCandidate() {
         return res.json();
       })
       .then((data) => {
-        const splitString = data.split("\\");
+        const splitString = data.split("/");
         const stringCheck = splitString[2].split(".");
         checkFileType(stringCheck[1]);
         const imageString = splitString[1] + "/".concat(splitString[2]);

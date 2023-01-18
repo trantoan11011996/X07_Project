@@ -166,7 +166,7 @@ export default function JobDetail() {
     if (data) {
       setJobData(data);
       const image = data?.name?.avatar;
-      const splitString = image.split("\\");
+      const splitString = image.split("/");
       const imageString = splitString[1] + "/".concat(splitString[2]);
       return setLogo(imageString);
     }

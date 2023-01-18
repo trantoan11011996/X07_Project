@@ -16,7 +16,7 @@ const JobItem = ({ data }) => {
   let crYear = new Date(crTime).getFullYear();
   let newCreate = `${crDay}-${crMonth}-${crYear}`;
   const image = data?.name?.avatar;
-  const splitString = image.split("\\");
+  const splitString = image.split("/");
   const imageString = splitString[1] + "/".concat(splitString[2]);
 
   return (

@@ -11,7 +11,7 @@ function CompanyItems({ company, id }) {
   let imageString
   if(company.avatar){
     const image = company?.avatar;
-    const splitString = image.split("\\");
+    const splitString = image.split("/");
      imageString = splitString[1] + "/".concat(splitString[2]);
   }
   else{
