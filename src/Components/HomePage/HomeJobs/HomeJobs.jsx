@@ -11,7 +11,6 @@ export default function HomeJobs({ jobHomePage, pageHomeJob, getJobHomePage }) {
   const [complete, setComplete] = useState(false);
   const [params, setParams] = useSearchParams();
 
-    console.log('page',pageHomeJob);
   setTimeout(() => {
     setComplete(true);
   }, 2500);

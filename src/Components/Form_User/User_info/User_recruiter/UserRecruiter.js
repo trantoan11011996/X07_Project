@@ -59,7 +59,6 @@ export default function UserRecruiter() {
     const getToken = JSON.parse(localStorage.getItem("token"));
     setToken(getToken);
     const user = JSON.parse(localStorage.getItem("currentUser"));
-    console.log("user", user);
     setUserInfo(user);
     if (user.avatar) {
       const splitString = user.avatar.split("\\");
@@ -182,12 +181,12 @@ export default function UserRecruiter() {
       return;
     } else {
       setDescriptEmpty(false);
-      if (!imageData) {
-        setImageEmpty(true);
-        return;
-      } else {
-        setImageEmpty(false);
-      }
+      // if (!imageData) {
+      //   setImageEmpty(true);
+      //   return;
+      // } else {
+      //   setImageEmpty(false);
+      // }
       const update = await updateRecruiterInfo(
         companyName,
         companyEmail,

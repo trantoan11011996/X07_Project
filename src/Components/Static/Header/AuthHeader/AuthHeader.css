@@ -71,6 +71,17 @@
 }
 .content {
 }
+.content-login {
+  position: relative;
+}
+.content-login::after{
+  position: absolute;
+  content: "";
+  height: 40px;
+  width: 300px;
+  left: -50px;
+  top: -5px;
+}
 /* ------------------ */
 .control-account {
   position: absolute;

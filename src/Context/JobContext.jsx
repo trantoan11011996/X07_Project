@@ -70,7 +70,6 @@ const JobProvider = ({ children }) => {
         return res.json();
       })
       .then((data) => {
-        console.log(data);
         setJobHomePage(data.recruiment);
         const pageTotal = Math.ceil(data.countDoc/10)
         console.log(pageTotal);
@@ -113,7 +112,6 @@ const JobProvider = ({ children }) => {
         localStorage.setItem("C-applied", JSON.stringify(data));
         setJobCandidateApplication(data);
         return data;
-        // console.log('data', (data[0].recruimentId))
       })
       .catch((error) => console.log(error.response));
   };
@@ -131,7 +129,6 @@ const JobProvider = ({ children }) => {
     .then((res) => {
       return res.json()
     }).then((data)=>{
-      console.log("data",data);
       setCompany(data.rcts);
       if (!localStorage.getItem("company")) {
         localStorage.setItem("company", JSON.stringify(data.rcts));
@@ -196,7 +193,6 @@ const JobProvider = ({ children }) => {
       createAt,
       deadline
     );
-    console.log("new",newRecruiment);
     // console.log(newRecruiment);
     const createRecruiment = await fetch(getApiHost() + `recruiments/new`, {
       method: "post",
@@ -233,7 +229,6 @@ const JobProvider = ({ children }) => {
       categoryId,
       locationId
     );
-    // console.log("update", newUpdatedRecruitment);
     const updateRecruitment = await fetch(getApiHost() + `recruiments/${id}`, {
       method: "PUT",
       body: JSON.stringify(newUpdatedRecruitment),
